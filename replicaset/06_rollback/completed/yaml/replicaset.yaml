@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: yoonjeong/my-app:2.0
+        image: yoonjeong/my-app:2.0-unhealthy
         ports:
         - containerPort: 8080
         resources:
