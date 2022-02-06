@@ -6,8 +6,6 @@
 
 # 배포 변경 사유 작성 "image update to 2.0"
 
-# Deployment 배포
-
 # Revision 목록 조회
 
 # Revision 2 상세 조회

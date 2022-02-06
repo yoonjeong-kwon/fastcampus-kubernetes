@@ -10,9 +10,6 @@ kubectl set image deployment/my-app my-app=yoonjeong/my-app:2.0
 # 배포 변경 사유 작성 "image update to 2.0"
 kubectl annotate deployment/my-app kubernetes.io/change-cause="image updated to 2.0"
 
-# Deployment 배포
-kubectl apply -f deployment.yaml
-
 # Revision 목록 조회
 kubectl rollout history deployment/my-app
 
