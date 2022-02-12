@@ -1,7 +1,7 @@
 # Pod replicas 1 -> 3으로 늘리기
 
 # ReplicaSet 생성 
-kubectl apply –f replicaset.yaml
+kubectl apply -f replicaset.yaml
 
 # Pod과 레이블 확인 
 kubectl get pod --show-labels
