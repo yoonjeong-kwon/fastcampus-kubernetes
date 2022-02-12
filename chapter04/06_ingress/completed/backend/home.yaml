@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: home
+  namespace: snackbar
+  labels:
+    service: home
+    project: snackbar
+spec:
+  type: NodePort
+  selector:
+    service: home
+    project: snackbar
+  ports:
+  - port: 80
+    targetPort: 8080
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: home
+  namespace: snackbar
+  labels:
+    service: home
+    project: snackbar
+spec:
+  selector:
+    matchLabels:
+      service: home
+      project: snackbar
+  template:
+    metadata:
+      labels:
+        service: home
+        project: snackbar
+    spec:
+      containers:
+      - name: home
+        image: yoonjeong/home:1.0
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
