@@ -2,13 +2,13 @@
 kubectl apply -f hello-app.yaml
 
 # Pod 실행 및 IP 확인
-kubectl get pod –o wide
+kubectl get pod -o wide
 
 # 컨테이너 IP 확인 (ifconfig eth0)
 kubectl exec hello-app -- ifconfig eth0
 
 # 컨테이너에 설정된 환경변수 확인 (env)
-kubectl exec hello-app -– env
+kubectl exec hello-app -- env
 
 # 컨테이너가 리스닝하고 있는 포트 확인 (netstat -a)
 kubectl exec hello-app -- netstat -a
