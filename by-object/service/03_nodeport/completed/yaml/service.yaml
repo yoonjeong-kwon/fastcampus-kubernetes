@@ -1,0 +1,99 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: order
+  namespace: snackbar
+  labels:
+    service: order
+    project: snackbar
+spec:
+  type: NodePort
+  selector:
+    service: order
+    project: snackbar
+  ports:
+  - port: 80
+    targetPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment
+  namespace: snackbar
+  labels:
+    service: payment
+    project: snackbar
+spec:
+  type: ClusterIP
+  selector:
+    service: payment
+    project: snackbar
+  ports:
+  - port: 80
+    targetPort: 8080
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order
+  namespace: snackbar
+  labels:
+    service: order
+    project: snackbar
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      service: order
+      project: snackbar
+  template:
+    metadata:
+      labels:
+        service: order
+        project: snackbar
+    spec:
+      containers:
+      - name: order
+        image: yoonjeong/order:1.0
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
+
+--- 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment
+  namespace: snackbar
+  labels:
+    service: payment
+    project: snackbar
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      service: payment
+      project: snackbar
+  template:
+    metadata:
+      labels:
+        service: payment
+        project: snackbar
+    spec:
+      containers:
+      - name: payment
+        image: yoonjeong/payment:1.0
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
