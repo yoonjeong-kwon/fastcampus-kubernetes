@@ -12,7 +12,7 @@ kubectl port-forward rs/myapp-replicaset 8080:8080
 
 # 5번 요청 실행
 for i in {0..5};
-do curl -v localhost:8080;
+do curl -vs localhost:8080;
 done
 
 # ReplcaSet의 my-app 컨테이너 이미지를 이전 버전(1.0)으로 변경 - 롤백 준비
@@ -21,7 +21,7 @@ kubectl set image rs/myapp-replicaset my-app=my-app:1.0
 # ReplicaSet과 Pod Template 확인 
 kubectl get rs myapp-replicaset -o wide 
 
-# 충돌난 Pod의 Owner 확인
+# Pod의 Owner 확인
 kubectl get pod <pod-name> -o jsonpath="{.metadata.ownerReferneces[0].name}"
 
 # 실행 중인 2.0 버전의 모든 Pod Label 변경
