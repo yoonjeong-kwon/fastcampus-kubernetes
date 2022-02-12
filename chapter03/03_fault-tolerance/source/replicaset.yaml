@@ -2,8 +2,8 @@
 # ReplicaSet 이름: blue-replicaset
 # ReplicaSet replicas: 3
 
-# 컨테이너 이름/포트: blue-app(8000)
-# 컨테이너 레이블: app=blue-app
+# Pod 템플릿 레이블: app=blue-app
+# 컨테이너 이름/포트: blue-app(8080)
 # 도커 이미지: yoonjeong/blue-app:1.0
 
         env:
