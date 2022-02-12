@@ -16,4 +16,20 @@ kubectl apply -f deployment.yaml
 
 # ReplicaSet이 생성하는 Pod 상태 변화 확인 (Watch 모드)
 # kubectl get rs -w 
-# 출력창에 결과가 업데잍트될 때마다 kubectl get rs 명령어를 실행하여 출력 결과를 기록
+# Recreate로 배포 시 ReplicaSet 변화와 비교
+# NAME                DESIRED   CURRENT   READY   AGE
+# my-app-5cf9bb6d65   3         0         0       0s
+# my-app-5cf9bb6d65   3         0         0       0s
+# my-app-5cf9bb6d65   3         3         0       0s
+# my-app-5cf9bb6d65   3         3         1       10s
+# my-app-5cf9bb6d65   3         3         2       12s
+# my-app-5cf9bb6d65   3         3         3       12s
+# my-app-5cf9bb6d65   0         3         3       4m6s
+# my-app-5cf9bb6d65   0         3         3       4m6s
+# my-app-5cf9bb6d65   0         0         0       4m6s
+# my-app-5bc87cc67f   3         0         0       0s
+# my-app-5bc87cc67f   3         0         0       1s
+# my-app-5bc87cc67f   3         3         0       1s
+# my-app-5bc87cc67f   3         3         1       12s
+# my-app-5bc87cc67f   3         3         2       15s
+# my-app-5bc87cc67f   3         3         3       15s
