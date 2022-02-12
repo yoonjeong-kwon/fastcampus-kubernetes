@@ -7,7 +7,7 @@ kubectl apply -f deployment.yaml
 # Deployment 배포 진행중/완료 상태 확인
 kubectl rollout status deployment/my-app
 
-# app=my-app 레이블을 가지는 모든 리소스를 레이블과 함께 자세한 정보 조회
+# app=my-app 레이블을 가지는 모든 리소스를 레이블과 함께 자세한 정보 조회 (pod-template-hash 레이블 확인)
 kubectl get all -l app=my-app -o wide --show-labels
 
 # ReplicaSet을 yaml 형식으로 조회
