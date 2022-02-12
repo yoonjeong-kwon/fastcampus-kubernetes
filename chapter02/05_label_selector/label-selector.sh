@@ -49,6 +49,6 @@ kubectl label pod hello-app-1 version-
 # Label 확인 (--show-labels, -L)
 kubectl get pod hello-app-1 -L group,concept,element,position,version
 
-# Pod 종료
+# 레이블을 이용한 Pod 집합 종료
 kubectl delete pod -l group
 

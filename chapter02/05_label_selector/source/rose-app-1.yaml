@@ -1,7 +1,7 @@
 # Pod API 버전: v1
 # Pod 이름: rose-app-1
 # 레이블: group=nature
-# 컨테이너 이름/포트: rose-app(8000)
+# 컨테이너 이름/포트: rose-app(8080)
 # 도커 이미지: yoonjeong/red-app:1.0
     env:
     - name: NODE_NAME

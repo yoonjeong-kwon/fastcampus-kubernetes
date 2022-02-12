@@ -1,7 +1,7 @@
 # Pod API 버전: v1
 # Pod 이름: hello-app-1
 # 레이블: group=greeting
-# 컨테이너 이름/포트: hello-app(8000)
+# 컨테이너 이름/포트: hello-app(8080)
 # 도커 이미지: yoonjeong/hello-app:1.0
     env:
     - name: NODE_NAME

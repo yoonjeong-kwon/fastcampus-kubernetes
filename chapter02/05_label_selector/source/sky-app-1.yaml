@@ -1,7 +1,7 @@
 # Pod API 버전: v1
 # Pod 이름: sky-app-1
 # 레이블: group=nature
-# 컨테이너 이름/포트: sky-app(8000)
+# 컨테이너 이름/포트: sky-app(8080)
 # 도커 이미지: yoonjeong/blue-app:1.0
     env:
     - name: NODE_NAME
