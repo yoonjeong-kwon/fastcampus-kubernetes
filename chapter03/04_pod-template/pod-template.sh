@@ -1,5 +1,5 @@
 # ReplicaSet 생성 
-kubectl apply –f replicaset.yaml
+kubectl apply -f replicaset.yaml
 
 # Pod 확인
 kubectl get pod --show-labels
@@ -16,8 +16,8 @@ kubectl get pod --show-labels
 # Pod replica 1개 삭제
 kubectl delete pod <pod-name>
 
-# ReplicaSet 이벤트 확인
-kubectl describe rs myapp-replicaset
-
 # Pod과 레이블 확인 
 kubectl get pod —-show-labels
+
+# ReplicaSet 이벤트 확인
+kubectl describe rs myapp-replicaset
