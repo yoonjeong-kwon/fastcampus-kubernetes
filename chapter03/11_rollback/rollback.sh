@@ -24,4 +24,4 @@ kubectl rollout undo deployment/my-app --to-revision=1
 kubectl rollout history deployment/my-app
 
 # 롤백 변경 사유를 작성
-kubectl annotate deployment/my-app kubernetes.io/change-cause="image reverted to 1.0 for a few bugs"
+kubectl annotate deployment/my-app kubernetes.io/change-cause="rollbacked to 1.0 for a few bugs"
