@@ -1,0 +1,12 @@
+# ReplicaSet API 버전: apps/v1
+# ReplicaSet 이름: myapp-replicaset
+# ReplicaSet replicas: 1
+
+# 컨테이너 이름/포트: my-app(8000)
+# 컨테이너 레이블: app=my-app
+# 도커 이미지: yoonjeong/my-app:1.0
+
+        resources:
+          limits: 
+            memory: "64Mi"
+            cpu: "50m"
