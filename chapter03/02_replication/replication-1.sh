@@ -16,5 +16,9 @@ kubectl get events --sort-by=.metadata.creationTimestamp
 # 포트포워딩 8080 -> 8080 (ReplicaSet에 의해 생성된 파드로 트래픽 전달)
 kubectl port-forward rs/blue-replicaset 8080:8080 
 
+# Pod로 요청 실행해보기 
+curl -vs localhost:8080/hello
+curl -vs localhost:8080/sky
+
 # ReplicaSet 삭제
 kubectl delete rs/blue-replicaset 
