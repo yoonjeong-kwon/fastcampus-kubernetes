@@ -4,7 +4,7 @@
 # Deployment 레이블: app=my-app
 # Deployment Pod Selector: app=my-app
 
-# 컨테이너 이름/포트: my-app(8000)
+# 컨테이너 이름/포트: my-app(8080)
 # 컨테이너 레이블: app=my-app, project=fastcampus, env=production
 # 도커 이미지: yoonjeong/my-app:1.0
         resources:
