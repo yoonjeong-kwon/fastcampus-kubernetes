@@ -4,7 +4,6 @@ kubectl apply -f blue-app.yaml
 # replicaset.yaml을 배포
 kubectl apply -f replicaset.yaml
 
-
 # ReplicaSet 목록 조회 (Watch 모드로 켜두고 ReplicaSet의 변화를 관찰할 수 있다)
 kubectl get rs -w
 
@@ -15,4 +14,4 @@ kubectl get pod -w
 kubectl describe rs blue-replicaset
 
 # ReplicaSet 삭제
-kubectl delete rs/blue-replicaset 
+kubectl delete rs/blue-replicaset                               
