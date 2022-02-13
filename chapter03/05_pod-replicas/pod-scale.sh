@@ -39,4 +39,4 @@ kubectl describe rs myapp-replicaset
 kubectl scale rs myapp-replicaset --replics=0
 
 # ReplicaSet 삭제
-kubectl delete myapp-replicaset
+kubectl delete rs/myapp-replicaset
