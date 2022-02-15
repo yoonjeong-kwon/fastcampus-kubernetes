@@ -24,7 +24,7 @@ kubectl get configmap nginx-config -o yaml
 #     mountPath: /etc/nginx/conf.d  # 컨테이너 안에서 마운팅할 경로
 
 
-# nginx 파드 생성 
+# nginx 파드, my-app 파드와 서비스 생성 
 kubectl apply -f web-server.yaml
 
 # 생성한 파드 확인
@@ -41,9 +41,13 @@ localhost:8080/myapp
 # HostIP: 10.4.1.76
 # HostName: nginx
 
+# nginx 접속 로그 확인
+kubectl exec web-server -- tail -10f /var/log/nginx/host.access.log
+
 # 컨테이너의 마운팅 경로 /etc/nginx/conf.d에서 ConfigMap 파일 확인 
 kubectl exec web-server -c nginx -- ls /etc/nginx/conf.d
 kubectl exec web-server -c nginx -- cat /etc/nginx/conf.d/server.conf
+
 
 # 파드 삭제
 kubectl delete pod web-server
