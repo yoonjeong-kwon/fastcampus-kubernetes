@@ -48,6 +48,8 @@ kubectl exec web-server -- tail -10f /var/log/nginx/host.access.log
 kubectl exec web-server -c nginx -- ls /etc/nginx/conf.d
 kubectl exec web-server -c nginx -- cat /etc/nginx/conf.d/server.conf
 
-
 # 파드 삭제
 kubectl delete pod web-server
+kubectl delete pod my-app
+kubectl delete svc my-app
+kubectl delete configmap nginx-config
