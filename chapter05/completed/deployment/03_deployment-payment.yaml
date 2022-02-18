@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-1.0
+  namespace: payment
+spec:
+  selector:
+    matchLabels:
+      app: payment
+      version: "1.0"
+  template:
+    metadata:
+      labels:
+        app: payment
+        version: "1.0"
+    spec:
+      containers:
+      - name: payment
+        image: yoonjeong/snackbar-payment:1.0
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 8080
+        env:
+          - name: PORT
+            valueFrom:
+              configMapKeyRef:
+                key: PAYMENT_HTTP_PORT
+                name: port-config

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: delivery-1.0
+  namespace: delivery
+spec:
+  selector:
+    matchLabels:
+      app: delivery
+      version: "1.0"
+  template:
+    metadata:
+      labels:
+        app: delivery
+        version: "1.0"
+    spec:
+      containers:
+      - name: delivery
+        image: yoonjeong/snackbar-delivery:1.0
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 8080
+        env:
+          - name: PORT
+            valueFrom:
+              configMapKeyRef:
+                key: DELIVERY_HTTP_PORT
+                name: port-config
