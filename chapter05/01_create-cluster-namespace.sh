@@ -6,6 +6,7 @@
 kubectl config view
 
 ## kubectlconfig 파일 설정 - 클러스터 API Server 주소, 클러스터 사용자 인증 정책
+gcloud auth login
 gcloud container clusters get-credentials development --zone us-central1-c --project spatial-path-340502
 gcloud container clusters get-credentials production --zone us-central1-c --project spatial-path-340502
 kubectl config view
