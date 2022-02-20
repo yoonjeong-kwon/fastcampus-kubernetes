@@ -18,38 +18,17 @@ spec:
     image: yoonjeong/unhealthy-app:1.0
     ports:
       - containerPort: 8080
-    # 여기에 작성 
+    readinessProbe:
+      exec:
+        command:
+          - ls 
+          - /var/ready
+      initialDelaySeconds: 60
+      periodSeconds: 5
+      successThreshold: 1 
+      failureThreshold: 1
+      timeoutSeconds: 10
     resources:  
       limits:
         memory: "64Mi"
         cpu: "50m"
-
----
-
-# readinessProbe
-## Exec 커맨드 - ls, - server.js
-## initialDelaySeconds: 30
-## periodSeconds: 5
-## successThreshold: 1
-## failureThreshold: 1
-## timeoutSeconds: 10
-
-apiVersion: v1
-kind: Pod
-metadata:
-  name: healthy
-  labels:
-    app: myapp
-spec:
-  containers:
-  - name: healthy
-    image: yoonjeong/healthy-app:1.0
-    ports:
-      - containerPort: 8080
-    # 여기에 작성
-    resources:  
-      limits:
-        memory: "64Mi"
-        cpu: "50m"
-
-        
