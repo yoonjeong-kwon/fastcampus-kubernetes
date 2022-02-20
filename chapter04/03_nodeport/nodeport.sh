@@ -28,8 +28,8 @@ export ORDER=<node-external-ip>:<node-port>
 # ORDER 환경변수 이용해서 메뉴판 조회 (/menus)
 curl http://$ORDER/menus
 
-# ORDER 환경변수 이용해서 주문 요청 (/order)
-curl --request POST http://$ORDER/order \
+# ORDER 환경변수 이용해서 주문 요청 (/checkout)
+curl --request POST http://$ORDER/checkout \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "Pizza": 1,
