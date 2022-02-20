@@ -8,13 +8,10 @@ kubectl get ingress snackbar -n order
 # 1-3. Ingress Address 확인
 kubectl get ingress snackbar -n order -o jsonpath="{.status.loadBalancer.ingress[0].ip}"
 
-# 1-4. /etc/hosts 파일 수정 - ingress address 와 order.fast-snackbar.com 호스트를 매핑
-sudo vi /etc/hosts
+# 1-4. 주문 결제 요청 - order.fast-snackbar.com/checkout 응답 확인
+export INGRESS_IP=$(kubectl get ingress snackbar -n order -o jsonpath="{.status.loadBalancer.ingress[0].ip}")
 
-# 1-5. 주문 결제 요청 - order.fast-snackbar.com/checkout 응답 확인
-kubectl port-forward service/order-app 8080:80 -n order
-
-curl -sv order.fast-snackbar.com/checkout \
+curl -H "Host: order.fast-snackbar.com" --request POST $INGRESS_IP/checkout \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "Pizza": 1,
@@ -22,13 +19,9 @@ curl -sv order.fast-snackbar.com/checkout \
     "Coke": 0,
     "Juice": 0
 }'
-# *   Trying 34.110.167.101:80...
-# * Connected to order.fast-snackbar.com (34.110.167.101) port 80 (#0)
-# > POST /checkout HTTP/1.1
-# > Host: order.fast-snackbar.com
 
-# 1-6. 주문 메뉴 조회 - order.fast-snackbar.com/menus 응답 확인
-curl -sv order.fast-snackbar.com/menus
+# 1-5. 주문 메뉴 조회 - order.fast-snackbar.com/menus 응답 확인
+curl -H "Host: order.fast-snackbar.com" --request GET $INGRESS_IP/menus
 
-# 1-7. 주문 상세 조회 - order.fast-snackbar.com/detail 응답 확인
-curl -sv order.fast-snackbar.com/detail
+# 1-6. 주문 상세 조회 - order.fast-snackbar.com/detail 응답 확인
+curl -H "Host: order.fast-snackbar.com" --request GET $INGRESS_IP/detail
