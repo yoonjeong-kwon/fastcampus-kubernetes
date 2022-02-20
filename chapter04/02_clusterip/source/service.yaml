@@ -42,7 +42,7 @@ spec:
     spec:
       containers:
       - name: order
-        image: yoonjeong/my-app:1.0
+        image: yoonjeong/order:1.0
         ports:
         - containerPort: 8080
         resources:
@@ -74,7 +74,7 @@ spec:
     spec:
       containers:
       - name: payment
-        image: yoonjeong/my-app:2.0
+        image: yoonjeong/payment:1.0
         ports:
         - containerPort: 8080
         resources:

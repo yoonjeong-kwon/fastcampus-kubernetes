@@ -3,8 +3,8 @@
 # snackbar 네임스페이스 생성
 kubect create namespace snackbar
 
-# Service, Deployment 배포 (service-clusterip.yaml)
-kubectl apply -f service-clusterip.yaml
+# Service, Deployment 배포 (service.yaml)
+kubectl apply -f service.yaml
 
 # snackbar 네임스페이스의 모든 리소스 조회
 kubectl get all -n snackbar

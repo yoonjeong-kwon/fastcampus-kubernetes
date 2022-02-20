@@ -3,17 +3,17 @@
 # snackbar 네임스페이스 생성
 kubect create namespace snackbar
 
-# Service, Deployment 배포 (service-clusterip.yaml)
-kubectl apply -f service-clusterip.yaml
+# Service, Deployment 배포 (service.yaml)
+kubectl apply -f service.yaml
 
 # snackbar 네임스페이스의 모든 리소스 조회
 kubectl get all -n snackbar
 
 # ‘payment’ 서비스 이름으로 order -> payment 파드 요청/응답 확인
-$ kubectl exec -it order-7954c88f5b-kqnf4 -n snackbar -- curl -s payment:80
+$ kubectl exec -it <order-pod> -n snackbar -- curl -s payment:80
 
 # snackbar 네임스페이스에 있는 order 컨테이너의 /etc/hosts 확인
-$ kubectl exec -it order-7954c88f5b-kqnf4 -n snackbar -- cat /etc/hosts
+$ kubectl exec -it <order-pod> -n snackbar -- cat /etc/hosts
 
 # kube-system 네임스페이스의 모든 kube-dns 리소스 조회
 # -- kube-dns Deployment를 통해 kube-dns Pod를 생성, ClusterIP 타입의 kube-dns Service를 통해 Pod 집합에 대한 단일 엔드포인트 제공 
