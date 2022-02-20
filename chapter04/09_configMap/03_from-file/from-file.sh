@@ -8,7 +8,7 @@
 # hello-app 파드 선언 시 envFrom 속성을 사용해서 greeting-config-from-file라는 ConfigMap 참조 
 
 # envFrom:
-# - configMapKey:
+# - configMapRef:
 #     name: greeting-config-from-file
 # env:
 # - name: GREETING
