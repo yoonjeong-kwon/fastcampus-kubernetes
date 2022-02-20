@@ -1,6 +1,6 @@
 # readinessProbe
 ## Exec 커맨드 - ls, - /var/ready
-## initialDelaySeconds: 30
+## initialDelaySeconds: 60
 ## periodSeconds: 5
 ## successThreshold: 1
 ## failureThreshold: 1
