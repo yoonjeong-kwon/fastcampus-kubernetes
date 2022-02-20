@@ -1,9 +1,9 @@
 # 1. development, production 클러스터 구성
 # 1-1. Google Cloud Platform 콘솔로 이동
 # 1-2. development 클러스터에 노드 1개, production 클러스터에 노드 2개를 할당
-# 1-3. development, product 클러스터 접속 정보 구성 (kubeconfig)
+# 1-3. development, product 클러스터 접속 정보 구성 (kubeconfig) > GKE 콘솔에서 클러스터 목록 > Actions > 연결
 ## kubeconfig 파일에서 클러스터 접속 정보 확인
-kubectl config view
+kubectl config view 
 
 ## kubectlconfig 파일 설정 - 클러스터 API Server 주소, 쿠버네티스 Root CA 인증서, 클러스터 사용자 인증 정책
 gcloud auth login
