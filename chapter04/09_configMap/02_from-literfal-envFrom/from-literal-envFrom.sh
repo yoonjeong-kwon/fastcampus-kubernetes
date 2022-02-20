@@ -4,11 +4,11 @@
 # 환경변수: 1) STUDENT_NAME, 2) MESSAGE, 3) GREETING(STUDENT_NAME과 MESSAGE 조합)
 
 # envFrom:
-# - configMapKey:
+# - configMapRef:
 #     name: greeting-config
 # env:
 # - name: GREETING
-#   value: $(MESSATE)! $(STUDENT_NAME)
+#   value: $(MESSAGE)! $(STUDENT_NAME)
 
 # hello-app 파드 생성
 kubectl apply -f hello-app.yaml
