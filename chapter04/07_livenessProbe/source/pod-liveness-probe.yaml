@@ -1,7 +1,7 @@
 # livenessProbe
 ## httpGet 엔드포인트 /
 ## httpGet 포트 8080
-## initialDelaySeconds: 30
+## initialDelaySeconds: 60
 ## periodSeconds: 5
 ## successThreshold: 1
 ## failureThreshold: 1
