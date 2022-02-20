@@ -12,7 +12,7 @@
 #     name: greeting-config-from-file
 # env:
 # - name: GREETING
-#   value: $(MESSATE)! $(STUDENT_NAME)
+#   value: $(MESSAGE)! $(STUDENT_NAME)
 
 # ConfigMap 확인 
 kubectl get configmap greeting-config-from-file -o yaml
