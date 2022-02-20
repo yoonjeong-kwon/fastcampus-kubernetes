@@ -7,7 +7,7 @@ kubectl scale deployment order-2.0 -n order --replicas=0
 
 # 3. 주문 홈 - order.fast-snackbar.com 응답 확인
 kubectl port-forward service/order-app 8080:80 -n order
-curl -sv order.fast-snackbar.com
+curl -sv -H "Host: order.fast-snackbar.com" --request GET $INGRESS_IP
 
 # 4. order 2.0 버전의 파드를 사용자에게 노출하고 싶은 만큼 replicas 조정, order 1.0 버전의 파드를 그만큼 감소
 kubectl scale deployment order-2.0 -n order --replicas=2
@@ -16,7 +16,7 @@ kubectl get deployment -n order
 
 ## 주문 홈 - order.fast-snackbar.com 응답 확인
 for i in {1..10};
-do curl -s order.fast-snackbar.com/
+do curl -sv -H "Host: order.fast-snackbar.com" --request GET $INGRESS_IP
 done
 
 # 5. order 2.0 버전의 파드를 사용자에게 노출하고 싶은 만큼 replicas 조정, order 1.0 버전의 파드를 그만큼 감소
@@ -26,7 +26,7 @@ kubectl get deployment -n order
 
 ## 주문 홈 - order.fast-snackbar.com 응답 확인
 for i in {1..10};
-do curl -s order.fast-snackbar.com/
+do curl -sv -H "Host: order.fast-snackbar.com" --request GET $INGRESS_IP
 done
 
 # 6. order 2.0 버전의 파드를 사용자에게 노출하고 싶은 만큼 replicas 조정, order 1.0 버전의 파드를 그만큼 감소
@@ -36,7 +36,7 @@ kubectl get deployment -n order
 
 ## 주문 홈 - order.fast-snackbar.com 응답 확인
 for i in {1..10};
-do curl -s order.fast-snackbar.com/
+do curl -sv -H "Host: order.fast-snackbar.com" --request GET $INGRESS_IP
 done
 
 # 6. order 2.0 버전의 파드를 사용자에게 노출하고 싶은 만큼 replicas 조정, order 1.0 버전의 파드를 그만큼 감소
@@ -46,5 +46,5 @@ kubectl get deployment -n order
 
 ## 주문 홈 - order.fast-snackbar.com 응답 확인
 for i in {1..10};
-do curl -s order.fast-snackbar.com/
+do curl -sv -H "Host: order.fast-snackbar.com" --request GET $INGRESS_IP
 done
