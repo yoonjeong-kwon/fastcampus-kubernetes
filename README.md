@@ -6,7 +6,7 @@
 ![커리큘럼](images/curriculum.png)
 
 ## 질문과 답변
-- 게시판: https://github.com/yoonjeong-kwon/fastcampus-kubernetes/discussions
+- 게시판: https://github.com/yoonjeong-kwon/fastcampus-kubernetes/discussions/categories/q-a
 - 이메일: chloe.lecture@gmail.com
 
 ## Google Cloud Platform 무료 평가판 크레딧 확인 방법
