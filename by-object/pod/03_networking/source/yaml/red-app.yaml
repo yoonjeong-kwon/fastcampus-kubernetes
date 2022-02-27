@@ -1,9 +1,0 @@
-# Pod API 버전: v1
-# Pod 이름: red-app
-# 컨테이너 이름/포트: red-app(8000)
-# 도커 이미지: yoonjeong/red-app:1.0
-# 환경변수: NODE_NAME, NAMESPACE, POD_IP 설정
-    resources:
-      limits:
-        memory: "64Mi"
-        cpu: "250m"
