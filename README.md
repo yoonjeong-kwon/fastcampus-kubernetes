@@ -3,8 +3,10 @@
 필수 쿠버네티스 오브젝트와 개념에 대해 학습합니다.
 
 ## 커리큘럼
+![커리큘럼](images/curriculum.png)
 
 ## Google Cloud Platform 무료 평가판 크레딧 확인 방법
+![Google Cloud Platform 무료 평가판 크레딧 확인 방법](images/check-gcp-freetier.png)
 
 ## 목차
 ### Chapter 01. 처음 만나는 쿠버네티스
