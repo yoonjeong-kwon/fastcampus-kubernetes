@@ -10,7 +10,7 @@
 - 이메일: chloe.lecture@gmail.com
 
 ## Google Cloud Platform 무료 평가판 크레딧 확인 방법
-![Google Cloud Platform 무료 평가판 크레딧 확인 방법](images/check-gcp-freetier.png)
+![Google Cloud Platform 무료 평가판 크레딧 확인 방법](images/check-gcp-freetier.png)
 
 ## 목차
 ### Chapter 01. 처음 만나는 쿠버네티스
